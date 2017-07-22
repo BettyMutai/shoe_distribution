@@ -1,0 +1,6 @@
+development:
+  adapter: postgresql
+  database: shoe_paradise_dev
+test:
+  adapter: postgresql
+  database: shoe_paradise_test
