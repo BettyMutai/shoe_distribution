@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col s6">
+    <h1>Stores</h1>
+    <form action="/stores" method="post">
+      <label for="store">Store Name:</label>
+      <input class="form-control" type="text" name="store" id="store" required>
+      <label for="town">Town Located:</label>
+      <input class="form-control" type="text" name="town" id="town" required>
+      <label for="street">Street Located:</label>
+      <input class="form-control" type="text" name="street" id="street" required>
+
+      <button type="submit">Add Store</button>
+    </form>
+    <div class="card">
+      <% if @stores.any? %>
+        <% @stores.each do |store| %>
+          <ul>
+            <li><a href="/stores/<%= store.id %>"><%= store.name %></a></li>
+          </ul>
+        <% end %>
+      <% else %>
+        <p>Nothing here :(</p>
+      <% end %>
+
+    </div>
+  </div>
+
+</div>
