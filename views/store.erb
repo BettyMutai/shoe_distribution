@@ -1,1 +1,7 @@
 <%= @store.name %> - <%= @store.town %> - <%= @store.street %>
+
+<% @store.shoes.each do |shoe| %>
+<img src="<%= shoe.image %>" alt=""><br>
+  <%= shoe.size %>
+  <%= shoe.cost %>
+<% end %>
