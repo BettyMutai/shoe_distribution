@@ -24,5 +24,27 @@
 
     </div>
   </div>
+  <div class="col s6">
+    <h1>Brands</h1>
+    <form action="/brands" method="post">
+      <label for="brand">Shoe Brand:</label>
+    <input class="form-control" type="text" name="brand" id="brand" placeholder="eg. Addidas" required>
+
+    <button type="submit">Add Brand</button>
+    </form>
+    <div class="card">
+      <% if @brands.any? %>
+        <% @brands.each do |brand| %>
+          <ul>
+            <li><a href="/brands/<%= brand.id %>"><%= brand.name %></a></li>
+          </ul>
+        <% end %>
+      <% else %>
+        <p>Nothing here :(</p>
+      <% end %>
+
+    </div>
+
+  </div>
 
 </div>
