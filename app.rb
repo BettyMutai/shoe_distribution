@@ -63,3 +63,15 @@ require("bundler/setup")
     @brand = Brand.find(params.fetch("id").to_i)
     erb(:brand)
   end
+
+  patch('/brands/:id') do
+    @brand = Brand.find(params.fetch("id").to_i)
+    @brand.update(name: params.fetch("brand"))
+    erb(:brand)
+  end
+
+  delete('/brands/:id') do
+    @brand = Brand.find(params.fetch("id").to_i)
+    @brand.destroy
+    redirect("/")
+  end
