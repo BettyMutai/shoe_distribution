@@ -1,1 +1,6 @@
-<%= @brand.name %>
+<h2><%= @brand.name %></h2>
+<% @brand.stores.each do |store| %>
+<ul>
+  <li><a href="/stores/<%= store.id %>"><%= store.name %></a></li>
+</ul>
+<% end %>
