@@ -8,12 +8,12 @@
       <input class="form-control" type="text" name="town" id="town" required>
       <label for="street">Street Located:</label>
       <input class="form-control" type="text" name="street" id="street" required>
-      <label for="image">Image</label>
-      <input class="form-control" type="text" name="image" id="image">
-      <label for="size">Size</label>
-      <input class="form-control" type="text" name="size" id="size">
-      <label for="cost">cost</label>
-      <input class="form-control" type="text" name="cost" id="cost">
+      <label for="image">Shoe Image:</label>
+      <input class="form-control" type="text" name="image" id="image" required>
+      <label for="size">Shoe Size:</label>
+      <input class="form-control" type="text" name="size" id="size" required>
+      <label for="cost">Shoe Cost:</label>
+      <input class="form-control" type="text" name="cost" id="cost" required>
 
       <label for="brand">Add Brand</label></br>
       <% if @brands.any? %>
@@ -45,7 +45,7 @@
     <form action="/brands" method="post">
       <label for="brand">Shoe Brand:</label>
       <input class="form-control" type="text" name="brand" id="brand" placeholder="eg. Addidas" required>
-      
+
     <button type="submit">Add Brand</button>
     </form>
     <div class="card">
