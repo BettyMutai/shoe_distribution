@@ -1,7 +1,42 @@
-<%= @store.name %> - <%= @store.town %> - <%= @store.street %>
+<div class="container">
+  <div class="row">
+    <div class="col s6">
+      <h2><%= @store.name %></h2>
+      <p>Location:
+        <%= @store.town %></p>
+      <p>Street:
+        <%= @store.street %></p>
+      <% @store.shoes.each do |shoe| %>
+      <img src="<%= shoe.image %>" alt=""><br>
+      Shoe Size:<%= shoe.size %><br>
+      Shoe Cost:<%= shoe.cost %>
+      <% end %>
 
-<% @store.shoes.each do |shoe| %>
-<img src="<%= shoe.image %>" alt=""><br>
-  <%= shoe.size %>
-  <%= shoe.cost %>
-<% end %>
+      <form action="/stores/<%= @store.id %>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <button type="submit">Delete</button>
+      </form>
+    </div>
+
+    <div class="col s6">
+      <h3>Edit Store:</h3>
+      <form action="/stores/<%= @store.id %>" method="post">
+        <input type="hidden" name="_method" value="patch">
+        <label for="store">Store Name:</label>
+        <input class="form-control" type="text" name="store" id="store" required>
+        <label for="town">Town Located:</label>
+        <input class="form-control" type="text" name="town" id="town" required>
+        <label for="street">Street Located:</label>
+        <input class="form-control" type="text" name="street" id="street" required>
+        <label for="image">Shoe Image:</label>
+        <input class="form-control" type="text" name="image" id="image" required>
+        <label for="size">Shoe Size:</label>
+        <input class="form-control" type="text" name="size" id="size" required>
+        <label for="cost">Shoe Cost:</label>
+        <input class="form-control" type="text" name="cost" id="cost" required>
+
+        <button type="submit">Edit</button>
+      </form>
+    </div>
+  </div>
+</div>
