@@ -32,12 +32,12 @@
   <p>Please add brands</p>
   <% end %>
 
-  <button type="submit">Add Shoe</button>
+  <button type="submit" class="waves-effect waves-light btn">Add Shoe</button>
 </form>
-
+<br>
 <form action="/stores/<%= @store.id %>" method="post">
   <input type="hidden" name="_method" value="delete">
-  <button type="submit">Delete</button>
+  <button type="submit" class="waves-effect waves-light btn">Delete</button>
 </form>
 
 <h3>Edit Store:</h3>
@@ -49,7 +49,7 @@
   <input class="form-control" type="text" name="town" id="town" required>
   <label for="street">Street Located:</label>
   <input class="form-control" type="text" name="street" id="street" required>
-  <button type="submit">Edit</button>
+  <button type="submit" class="waves-effect waves-light btn">Edit</button>
 </form>
 
 </div>

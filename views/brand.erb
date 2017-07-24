@@ -12,7 +12,7 @@
 
       <form action="/brands/<%= @brand.id %>" method="post">
         <input type="hidden" name="_method" value="delete">
-        <button type="submit">Delete</button>
+        <button type="submit" class="waves-effect waves-light btn">Delete</button>
       </form>
     </div>
 
@@ -22,7 +22,7 @@
         <input type="hidden" name="_method" value="patch">
         <label for="brand">Shoe Brand:</label>
         <input class="form-control" type="text" name="brand" id="brand" placeholder="eg. Addidas" required>
-        <button type="submit">Edit</button>
+        <button type="submit" class="waves-effect waves-light btn">Edit</button>
       </form>
     </div>
   </div>
