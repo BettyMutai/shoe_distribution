@@ -1,5 +1,6 @@
 ## Shoe Paradise
 ###### MC3 Ruby IP4
+###### [VIEW DEMO](https://shoe-paradise-app.herokuapp.com/)
 
 ## Description
 This is a website that lets users track shoe brands and what stores they are in.
