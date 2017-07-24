@@ -8,22 +8,6 @@
       <input class="form-control" type="text" name="town" id="town" required>
       <label for="street">Street Located:</label>
       <input class="form-control" type="text" name="street" id="street" required>
-      <label for="image">Shoe Image:</label>
-      <input class="form-control" type="text" name="image" id="image" required>
-      <label for="size">Shoe Size:</label>
-      <input class="form-control" type="text" name="size" id="size" required>
-      <label for="cost">Shoe Cost:</label>
-      <input class="form-control" type="text" name="cost" id="cost" required>
-
-      <label for="brand">Add Brand</label></br>
-      <% if @brands.any? %>
-        <% @brands.each do |brand| %>
-          <input type="checkbox" name="brand_id" id="<%= brand.name %>" value="<%= brand.id %>">
-          <label for="<%= brand.name %>"><%= brand.name %></label></br>
-        <% end %>
-      <% else %>
-        <p>Please add brands</p>
-      <% end %>
 
       <button type="submit">Add Store</button>
     </form>

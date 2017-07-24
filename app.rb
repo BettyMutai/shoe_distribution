@@ -12,14 +12,8 @@ require("bundler/setup")
     store = params.fetch("store")
     town = params.fetch("town")
     street = params.fetch("street")
-    image = params.fetch("image")
-    size = params.fetch("size")
-    cost = params.fetch("cost")
-    brand = Brand.find(params.fetch("brand_id").to_i)
     store = Store.new(name: store, town: town, street: street)
     if store.save()
-      shoe = Shoe.new(image: image, size: size, cost: cost, brand_id: brand.id, store_id: store.id)
-      shoe.save()
       redirect('/stores/'.concat(store.id.to_s))
     else
     erb(:index)
@@ -27,6 +21,8 @@ require("bundler/setup")
   end
 
   get('/stores/:id') do
+    @brands = Brand.all
+    @shoes = Shoe.all
     @store = Store.find(params.fetch('id').to_i)
     erb(:store)
   end
@@ -37,8 +33,7 @@ require("bundler/setup")
     image = params.fetch("image")
     size = params.fetch("size")
     cost = params.fetch("cost")
-    shoe = Shoe.find_by_store_id(params.fetch("id").to_i)
-    shoe.update(image: image, size: size, cost: cost)
+
     erb(:store)
   end
 
@@ -48,6 +43,17 @@ require("bundler/setup")
     @shoe.destroy
     @store.destroy
     redirect("/")
+  end
+
+  post('/shoes') do
+    store = Store.find(params.fetch("id").to_i)
+    brand = Brand.find(params.fetch("brand_id").to_i)
+    shoe = Shoe.new(image: params.fetch("image"), size: params.fetch("size"), cost: params.fetch("cost"))
+    if shoe.save()
+      redirect('/stores/'.concat(store.id.to_s))
+    else
+    erb(:index)
+    end
   end
 
   post('/brands') do
