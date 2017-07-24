@@ -1,6 +1,5 @@
 ## Shoe Paradise
 ###### MC3 Ruby IP4
-###### [VIEW DEMO](https://morning-mountain-80484.herokuapp.com/)
 
 ## Description
 This is a website that lets users track shoe brands and what stores they are in.
