@@ -12,7 +12,7 @@
     <% end %>
     <h3>Add Shoes:</h3>
     <form action="/shoes" method="post">
-      <input type="hidden" name="id" value="<%= @store.id %>">
+      <input id="id" type="hidden" name="id" value="<%= @store.id %>">
       <label for="image">Shoe Image:</label>
       <input class="form-control" type="text" name="image" id="image" required>
       <label for="size">Shoe Size:</label>
