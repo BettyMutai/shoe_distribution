@@ -1,3 +1,10 @@
 .nav-wrapper {
   background-image: url(https://s-media-cache-ak0.pinimg.com/originals/23/d2/41/23d2413bf7667cd7e709a05d81015e36.jpg);
+  position: relative;
+}
+.brand-logo {
+  position: absolute;
+  left: 50%;
+  margin-left: -50px !important;  /* 50% of your logo width */
+  display: block;
 }
